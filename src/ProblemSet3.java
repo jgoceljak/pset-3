@@ -212,7 +212,7 @@ public class ProblemSet3 {
            System.out.println("\nGrades below 0 are invalid.");
         } else if (grade > 100) {
            System.out.println("\nGrades above 100 are invalid.");
-       }
+       } else {}
   }
 
 
@@ -301,7 +301,7 @@ public class ProblemSet3 {
           System.out.println("\nThat's not a valid rank.");
         } else if (!(suitValid)){
           System.out.println("\nThat's not a valid suit.");
-        }
+        } else {}
     }
 
     /*
@@ -344,18 +344,18 @@ public class ProblemSet3 {
       if (scale.equals("F")){
         if (temp >= F_BOILING) {
           System.out.println("\nGas.");
-        }else if (temp < F_BOILING && temp > F_FREEZING) {
+        } else if (temp < F_BOILING && temp > F_FREEZING) {
           System.out.println("\nLiquid.");
-        }else if (temp <= F_FREEZING) {
+        } else if (temp <= F_FREEZING) {
           System.out.println("\nSolid.");
         }
       } else {
-        if (temp >= C_BOILING) {
-          System.out.println("\nGas.");
-        }else if (temp < C_BOILING && temp > C_FREEZING) {
-          System.out.println("\nLiquid.");
-        }else if (temp <= C_FREEZING) {
-          System.out.println("\nSolid.");
+          if (temp >= C_BOILING) {
+            System.out.println("\nGas.");
+        } else if (temp < C_BOILING && temp > C_FREEZING) {
+            System.out.println("\nLiquid.");
+        } else if (temp <= C_FREEZING) {
+            System.out.println("\nSolid.");
         }
       }
     }
@@ -446,7 +446,6 @@ public class ProblemSet3 {
       double pay = 0.00;
       double overtimeHours = 0;
       double additionalPay = 0;
-
       System.out.print("\nWage: ");
       double wage = in.nextDouble();
       System.out.print("Hours: ");
