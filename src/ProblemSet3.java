@@ -228,6 +228,9 @@ public class ProblemSet3 {
       System.out.print("\nEnter a card: ");
       in.nextLine();
       String card = in.nextLine();
+      if (card.length() < 2) {
+        System.out.println("\nThat's not a valid rank.");
+      } else {
       card = card.toUpperCase();
       char rank = card.charAt(0);
       char suit = card.charAt(1);
@@ -302,6 +305,7 @@ public class ProblemSet3 {
         } else if (!(suitValid)){
           System.out.println("\nThat's not a valid suit.");
         } else {}
+      }
     }
 
     /*
@@ -457,16 +461,16 @@ public class ProblemSet3 {
           if (overtimeHours > 0) {
               additionalPay = overtimeHours * wage *OT_PAY_MULTIPLIER;
               pay = additionalPay + (wage * OT_THRESHOLD);
-              System.out.printf("\nYou'll make $%,.2f this week.\n", pay);
+              System.out.printf("\nYou'll make $%,.2f this week.\n\n", pay);
           } else{
               pay = wage * hours;
-              System.out.printf("\nYou'll make $%,.2f hours this week.\n", pay);
+              System.out.printf("\nYou'll make $%,.2f hours this week.\n\n", pay);
           }
       } else {
-          System.out.println("\nYour hours must be greater than or equal to 0.0.\n");
+          System.out.println("\nYour hours must be greater than or equal to 0.0.\n\n");
         }
    } else {
-        System.out.println("\nYour wage must be greater than or equal to $0.00/hour.\n");
+        System.out.println("\nYour wage must be greater than or equal to $0.00/hour.\n\n");
       }
   }
 }
