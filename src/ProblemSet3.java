@@ -28,16 +28,16 @@ public class ProblemSet3 {
 
         // comment out or uncomment as needed
 
-        // ps.sign();          // executes Exercise 1
-        // ps.parity();        // executes Exercise 2
-        // ps.ordered();       // executes Exercise 3
-        // ps.gpa();           // executes Exercise 4
-        // ps.grade();         // executes Exercise 5
+        ps.sign();          // executes Exercise 1
+        ps.parity();        // executes Exercise 2
+        ps.ordered();       // executes Exercise 3
+        ps.gpa();           // executes Exercise 4
+        ps.grade();         // executes Exercise 5
         ps.cards();         // executes Exercise 6
-        // ps.leapYear();      // executes Exercise 7
-        // ps.state();         // executes Exercise 8
-        // ps.months();        // executes Exercise 9
-        // ps.salary();        // executes Exercise 10
+        ps.leapYear();      // executes Exercise 7
+        ps.state();         // executes Exercise 8
+        ps.months();        // executes Exercise 9
+        ps.salary();        // executes Exercise 10
 
         in.close();
     }
@@ -49,7 +49,7 @@ public class ProblemSet3 {
      */
 
     public void sign() {
-      System.out.print("Enter an Integer: ");
+      System.out.print("\nEnter an Integer: ");
       long numSign = in.nextLong();
 
       if (numSign == 0) {
@@ -68,7 +68,7 @@ public class ProblemSet3 {
      */
 
     public void parity() {
-      System.out.print("Enter an Integer: ");
+      System.out.print("\nEnter an Integer: ");
       long numParity = in.nextLong();;
 
       long parity = numParity % 2;
@@ -87,7 +87,7 @@ public class ProblemSet3 {
      */
 
     public void ordered() {
-      System.out.println("Enter three integers.");
+      System.out.println("\nEnter three integers.");
 
       System.out.print("\nEnter Integer: ");
       long order1 = in.nextLong();
@@ -129,6 +129,7 @@ public class ProblemSet3 {
         boolean validLetter = true;
 
         System.out.print("\nEnter a letter grade: ");
+        in.nextLine();
         String letterGrade = in.nextLine();
         letterGrade = letterGrade.toUpperCase();
         char letter = (letterGrade.charAt(0));
@@ -183,7 +184,7 @@ public class ProblemSet3 {
      */
 
     public void grade() {
-      final double A_MAXIMUM = 100;
+        final double A_MAXIMUM = 100;
         final double A_MINIMUM = 90;
         final double B_MAXIMUM = 89;
         final double B_MINIMUM = 80;
@@ -225,6 +226,7 @@ public class ProblemSet3 {
       boolean rankValid = true;
       boolean suitValid = true;
       System.out.print("\nEnter a card: ");
+      in.nextLine();
       String card = in.nextLine();
       card = card.toUpperCase();
       char rank = card.charAt(0);
@@ -318,17 +320,44 @@ public class ProblemSet3 {
         System.out.println("\n" + year + " is not a leap year.");
       }
     }
-  
+
 
     /*
      * Exercise 8.
      *
-     * Prompt the user to enter a temperature. At that temperature, is water a solid,
+     * Prompt the user to enter a temp. At that temp, is water a solid,
      * liquid, or gas?
      */
 
     public void state() {
+      final int F_BOILING = 212;
+      final int F_FREEZING = 32;
+      final int C_BOILING= 100;
+      final int C_FREEZING = 0;
 
+      System.out.print("\nEnter a temperature: ");
+      int temp = in.nextInt();
+      System.out.print("Enter a scale: ");
+      String scale = in.next();
+      scale = scale.toUpperCase();
+
+      if (scale.equals("F")){
+        if (temp >= F_BOILING) {
+          System.out.println("\nGas.");
+        }else if (temp < F_BOILING && temp > F_FREEZING) {
+          System.out.println("\nLiquid.");
+        }else if (temp <= F_FREEZING) {
+          System.out.println("\nSolid.");
+        }
+      } else {
+        if (temp >= C_BOILING) {
+          System.out.println("\nGas.");
+        }else if (temp < C_BOILING && temp > C_FREEZING) {
+          System.out.println("\nLiquid.");
+        }else if (temp <= C_FREEZING) {
+          System.out.println("\nSolid.");
+        }
+      }
     }
 
     /*
@@ -338,7 +367,71 @@ public class ProblemSet3 {
      */
 
     public void months() {
-
+      System.out.print("\nEnter a month: ");
+      in.nextLine();
+      String month = in.nextLine();
+      month = month.toLowerCase();
+      switch (month) {
+        case "january":
+        case "jan":
+        case "janu":
+          System.out.println("\n31 days.");
+          break;
+        case "february":
+        case "feb":
+        case "febr":
+          System.out.println("\n28 or 29 days.");
+          break;
+        case "march":
+        case "mar":
+        case "marc":
+          System.out.println("\n31 days.");
+          break;
+        case "april":
+        case "apr":
+        case "apri":
+          System.out.println("\n30 days.");
+          break;
+        case "may":
+          System.out.println("\n31 days.");
+          break;
+        case "june":
+        case "jun":
+          System.out.println("\n30 days.");
+          break;
+        case "july":
+        case "jul":
+          System.out.println("\n31 days.");
+          break;
+        case "august":
+        case "aug":
+        case "augu":
+          System.out.println("\n31 days.");
+          break;
+        case "september":
+        case "sep":
+        case "sept":
+          System.out.println("\n30 days.");
+          break;
+        case "october":
+        case "oct":
+        case "octo":
+          System.out.println("\n31 days.");
+          break;
+        case "november":
+        case "nov":
+        case "nove":
+          System.out.println("\n30 days.");
+          break;
+        case "december":
+        case "dec":
+        case "dece":
+          System.out.println("\n31 days.");
+          break;
+        default:
+          System.out.println("\nThat's not a valid month.");
+          break;
+  }
     }
 
     /*
@@ -348,6 +441,33 @@ public class ProblemSet3 {
      */
 
     public void salary() {
+      final double OT_THRESHOLD = 40;
+      final double OT_PAY_MULTIPLIER = 1.5;
+      double pay = 0.00;
+      double overtimeHours = 0;
+      double additionalPay = 0;
 
-    }
+      System.out.print("\nWage: ");
+      double wage = in.nextDouble();
+      System.out.print("Hours: ");
+      double hours = in.nextDouble();
+
+      if (wage >= 0) {
+        if (hours >= 0) {
+          overtimeHours = hours - OT_THRESHOLD;
+          if (overtimeHours > 0) {
+              additionalPay = overtimeHours * wage *OT_PAY_MULTIPLIER;
+              pay = additionalPay + (wage * OT_THRESHOLD);
+              System.out.printf("\nYou'll make $%,.2f this week.\n", pay);
+          } else{
+              pay = wage * hours;
+              System.out.printf("\nYou'll make $%,.2f hours this week.\n", pay);
+          }
+      } else {
+          System.out.println("\nYour hours must be greater than or equal to 0.0.\n");
+        }
+   } else {
+        System.out.println("\nYour wage must be greater than or equal to $0.00/hour.\n");
+      }
+  }
 }
